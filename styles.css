@@ -1,0 +1,120 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(120deg, #ffafbd, #ffc3a0);
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff6f61;
+    color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+main {
+    margin-top: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.features-grid, .sub-feature-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.feature-btn, .sub-feature-btn {
+    padding: 1rem;
+    font-size: 1.2rem;
+    background: #ffcc5c;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    width: 200px;
+}
+
+.feature-btn:hover, .sub-feature-btn:hover {
+    background: #ff6f61;
+    transform: scale(1.1);
+}
+
+#dynamic-content {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    margin: 0.5rem 0 0.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
+    width: 100%; /* Full-width */
+    padding: 10px; /* Add padding for a comfortable feel */
+    margin: 8px 0; /* Add some margin for spacing */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    border: 2px solid #ccc; /* Default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Set font size */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+/* Add focus effect */
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="email"]:focus, 
+input[type="number"]:focus {
+    border-color: #007BFF; /* Highlight border */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add glowing effect */
+    outline: none; /* Remove the default outline */
+}
+

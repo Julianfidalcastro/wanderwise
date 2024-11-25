@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Puzzle Games</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Engaging Puzzle Activities</h2>
+            <p>Challenge your brain with fun and interactive puzzles!</p>
+            <button class="feature-btn" onclick="goBack()">Go Back</button>
+        </section>
+        
+        <section>
+            <h2>🎯 Number Guessing Game</h2>
+            <p>Guess a number between 1 and 100!</p>
+            <div id="game-container">
+                <input type="number" id="guess" placeholder="Enter your guess" min="1" max="100">
+                <button onclick="checkGuess()">Submit Guess</button>
+                <p id="result"></p>
+                <p id="attempts"></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 WanderWise. Keep playing and learning!</p>
+    </footer>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            const userGuess = parseInt(document.getElementById('guess').value);
+            const result = document.getElementById('result');
+            const attemptsDisplay = document.getElementById('attempts');
+            attempts++;
+
+            if (userGuess === randomNumber) {
+                result.textContent = `🎉 Congratulations! You guessed it right. The number was ${randomNumber}.`;
+                result.style.color = "green";
+            } else if (userGuess > randomNumber) {
+                result.textContent = "📉 Too high! Try again.";
+                result.style.color = "red";
+            } else {
+                result.textContent = "📈 Too low! Try again.";
+                result.style.color = "red";
+            }
+
+            attemptsDisplay.textContent = `Attempts: ${attempts}`;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

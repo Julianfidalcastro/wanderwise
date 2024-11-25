@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Module</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>📘 Learning Module</h1>
+    </header>
+    <main>
+        <section>
+            <h2>📚 Explore Our Learning Topics</h2>
+            <p>Learn through interactive modules tailored for curious minds!</p>
+        </section>
+
+        <!-- Module Cards -->
+        <section class="module-grid">
+            <div class="module-card">
+                <h3>🌍 Geography Basics</h3>
+                <p>Discover the wonders of our planet.</p>
+                <button onclick="startQuiz()">Take a Quiz</button>
+            </div>
+
+            <div class="module-card">
+                <h3>🔢 Math Made Fun</h3>
+                <p>Interactive exercises to sharpen your math skills.</p>
+                <button onclick="playMathGame()">Start Learning</button>
+            </div>
+
+            <div class="module-card">
+                <h3>🌌 Science Explorations</h3>
+                <p>Explore the mysteries of the universe through videos.</p>
+                <button onclick="showVideo()">Watch Video</button>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz -->
+        <section id="quiz-section" style="display: none;">
+            <h2>🌍 Geography Quiz</h2>
+            <p>What is the capital of France?</p>
+            <button onclick="submitAnswer('Paris')">Paris</button>
+            <button onclick="submitAnswer('Rome')">Rome</button>
+            <button onclick="submitAnswer('Berlin')">Berlin</button>
+            <p id="quiz-result"></p>
+        </section>
+
+        <!-- Math Game -->
+        <section id="math-game-section" style="display: none;">
+            <h2>🔢 Quick Math Game</h2>
+            <p>What is 7 x 8?</p>
+            <input type="number" id="math-answer" placeholder="Your Answer">
+            <button onclick="checkMathAnswer()">Submit</button>
+            <p id="math-result"></p>
+        </section>
+
+        <!-- Science Video -->
+        <section id="video-section" style="display: none;">
+            <h2>🌌 Learn About Space</h2>
+            <video width="100%" controls>
+                <source src="space-exploration.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Enjoy this journey through the cosmos!</p>
+        </section>
+        <button class="feature-btn" onclick="goBack()">Go Back</button>
+
+    </main>
+
+
+    <footer>
+        <p>© 2024 WanderWise. Keep exploring! 🌟</p>
+    </footer>
+
+    <script>
+        function startQuiz() {
+            document.getElementById("quiz-section").style.display = "block";
+            document.getElementById("math-game-section").style.display = "none";
+            document.getElementById("video-section").style.display = "none";
+        }
+
+        function submitAnswer(answer) {
+            const result = document.getElementById("quiz-result");
+            if (answer === "Paris") {
+                result.textContent = "🎉 Correct! Paris is the capital of France.";
+                result.style.color = "green";
+            } else {
+                result.textContent = "❌ Incorrect. Try again!";
+                result.style.color = "red";
+            }
+        }
+
+        function playMathGame() {
+            document.getElementById("math-game-section").style.display = "block";
+            document.getElementById("quiz-section").style.display = "none";
+            document.getElementById("video-section").style.display = "none";
+        }
+
+        function checkMathAnswer() {
+            const answer = document.getElementById("math-answer").value;
+            const result = document.getElementById("math-result");
+            if (parseInt(answer) === 56) {
+                result.textContent = "🎉 Correct! Great job!";
+                result.style.color = "green";
+            } else {
+                result.textContent = "❌ Incorrect. Try again!";
+                result.style.color = "red";
+            }
+        }
+
+        function showVideo() {
+            document.getElementById("video-section").style.display = "block";
+            document.getElementById("quiz-section").style.display = "none";
+            document.getElementById("math-game-section").style.display = "none";
+        }
+
+        function goBack() {
+            window.history.back(); // Takes the user back to the previous page
+        }
+    </script>
+</body>
+</html>
